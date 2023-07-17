@@ -1,7 +1,7 @@
 .home-container {
     display: flex;
     .all-movies {
-      width: 75%;
+      width: 80%;
       min-height: calc(100vh - 80px);
       border-right: 1px solid #003049;
       padding: 20px 40px;
@@ -23,6 +23,7 @@
         }
       }
       .movies-thumbnail {
+        position: relative;
         display: flex;
         justify-content: space-between;
         margin-bottom: 30px;
@@ -46,7 +47,7 @@
       }
     }
     .popular-movies {
-      width: 25%;
+      width: 20%;
       min-height: calc(100vh - 80px);
       padding: 20px 40px;
       font-family: "Roboto", sans-serif;
@@ -78,13 +79,3 @@
     }
   }
   
-  .rating {
-    padding-right: 45px;
-    position: relative;
-    .rating-value {
-      position: absolute;
-      top: 10px;
-      right: 0px;
-      font-weight: bold;
-    }
-  }

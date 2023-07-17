@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { MovieComponent } from './movie/movie.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,13 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     MovieComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    NgbRatingModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

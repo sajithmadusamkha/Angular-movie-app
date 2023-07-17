@@ -7,14 +7,16 @@
         <div class="view-all">View All</div>
       </div>
       <div class="movies-thumbnail">
-        <div class="movie">
+        <div class="movie" *ngFor="let movie of trendingMovies">
           <div class="cover">
-            <img alt="" />
+            <img [src]="movie.cover" alt="" />
           </div>
           <div class="detail">
-            <div class="name"></div>
+            <div class="name">{{ movie.name }}</div>
             <div class="rating">
-              <span class="rating-value"></span>
+              <span class="rating-value">
+                <ngb-rating [(rate)]="movie.rating" [max]="5"></ngb-rating>
+              </span>
             </div>
           </div>
         </div>
@@ -28,7 +30,7 @@
       <div class="movies-thumbnail">
         <div class="movie">
           <div class="cover">
-            <img alt="" />
+            <img [src]="" alt="" />
           </div>
           <div class="detail">
             <div class="name"></div>
