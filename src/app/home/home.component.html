@@ -8,7 +8,7 @@
       </div>
       <div class="movies-thumbnail">
         <div class="movie" *ngFor="let movie of trendingMovies">
-          <div class="cover">
+          <div class="cover" (click)="gotToMovies('trending', movie.id)">
             <img [src]="movie.cover" alt="" />
           </div>
           <div class="detail">
@@ -30,14 +30,20 @@
         <div class="view-all">View All</div>
       </div>
       <div class="movies-thumbnail">
-        <div class="movie">
-          <div class="cover">
-            <img [src]="" alt="" />
+        <div class="movie" *ngFor="let movie of theatreMovies">
+          <div class="cover" (click)="gotToMovies('theatre', movie.id)">
+            <img [src]="movie.cover" />
           </div>
           <div class="detail">
-            <div class="name"></div>
+            <div class="name" (click)="gotToMovies('popular', movie.id)">
+              {{ movie.name }}
+            </div>
             <div class="rating">
-              <span class="rating-value"></span>
+              <span class="rating-value">{{ movie.rating }}</span>
+              <app-star-rating
+                [rating]="movie.rating"
+                [isReadOnly]="true"
+              ></app-star-rating>
             </div>
           </div>
         </div>
@@ -47,10 +53,14 @@
   <div class="popular-movies">
     <h4>All Time Popular</h4>
     <div class="movies">
-      <div class="movie">
-        <div class="name"></div>
+      <div class="movie" *ngFor="let movie of popularMovies">
+        <div class="name">{{ movie.name }}</div>
         <div class="rating">
-          <span class="rating-value"></span>
+          <span class="rating-value">{{ movie.rating }}</span>
+          <app-star-rating
+            [rating]="movie.rating"
+            [isReadOnly]="true"
+          ></app-star-rating>
         </div>
       </div>
       <div class="view-all">View all</div>
