@@ -14,9 +14,11 @@
           <div class="detail">
             <div class="name">{{ movie.name }}</div>
             <div class="rating">
-              <span class="rating-value">
-                <ngb-rating [(rate)]="movie.rating" [max]="5"></ngb-rating>
-              </span>
+              <span class="rating-value">{{ movie.rating }} </span>
+              <app-star-rating
+                [rating]="movie.rating"
+                [isReadOnly]="true"
+              ></app-star-rating>
             </div>
           </div>
         </div>
